@@ -5,16 +5,18 @@
  */
 package FigurasApi;
 
-import FigurasApi.Figura.tipoColor;
+import FigurasApi.Figura.TipoColor;
 
 /**
  *
  * @author dam115
  */
 public class Circulo extends Figura{
-    float radio;
+    private float radio;
 
-    public Circulo(float radio, tipoColor colorCirculo) {
+    public Circulo(float radio, TipoColor color) {
+        super(color);
+        this.radio=radio;
     }
 
     @Override
@@ -24,12 +26,20 @@ public class Circulo extends Figura{
 
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       double area;
+       area = Math.PI *Math.pow(this.radio, 2);
+       return area;
     }
 
     @Override
     public double perimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double perimetro;
+        perimetro = Math.PI*Math.pow(this.radio, 2);
+        return perimetro;
+    }
+
+    public float getRadio() {
+        return radio;
     }
     
 }

@@ -5,7 +5,7 @@
  */
 package FigurasApi;
 
-import FigurasApi.Figura.tipoColor;
+import FigurasApi.Figura.TipoColor;
 
 
 
@@ -14,9 +14,12 @@ import FigurasApi.Figura.tipoColor;
  * @author dam115
  */
 public class Triangulo extends Figura{
-   float altura;
-   float lado;
-   public Triangulo(float altura, float lado, tipoColor colorTriangulo){
+   private float altura;
+   private float lado;
+   public Triangulo(float altura, float lado, TipoColor color){
+       super(color);
+       this.altura=altura;
+       this.lado=lado;
    }
 
     @Override
@@ -26,12 +29,18 @@ public class Triangulo extends Figura{
 
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double area;
+        area = this.altura * this.lado/2;
+        return area;
     }
 
     @Override
     public double perimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.lado*3;
+    }
+
+    public float getAltura() {
+        return altura;
     }
    
 }

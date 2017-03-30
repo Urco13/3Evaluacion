@@ -5,17 +5,19 @@
  */
 package FigurasApi;
 
-import FigurasApi.Figura.tipoColor;
 
 /**
  *
  * @author dam115
  */
 public class Rectangulo extends Figura{
-    float base;
-    float altura;
+    private float base;
+    private float altura;
 
-    public Rectangulo(float base, float altura, tipoColor colorRectangulo) {  
+    public Rectangulo(float base, float altura, TipoColor color) {
+        super(color);
+        this.base=base;
+        this.altura=base;
     }
 
     @Override
@@ -25,12 +27,16 @@ public class Rectangulo extends Figura{
 
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double area;
+        area=this.base * this.altura;
+        return area;
     }
 
     @Override
     public double perimetro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double perimetro;
+        perimetro = 2*(this.base+this.altura);
+        return perimetro;
     }
     
 }
