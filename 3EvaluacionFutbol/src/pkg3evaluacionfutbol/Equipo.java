@@ -28,8 +28,4 @@ package pkg3evaluacionfutbol;
                 return puestoLiga;
         }             
 }
-enum Demarcacion
-{
-    PORTERO, DEFENSA, CENTROCAMPISTA, DELANTERO
-}
 

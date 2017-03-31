@@ -9,6 +9,10 @@ package pkg3evaluacionfutbol;
  *
  * @author dam115
  */
+enum Demarcacion
+{
+    PORTERO, DEFENSA, CENTROCAMPISTA, DELANTERO
+}
 
 public class Futbolista {
     	private int dorsal;
@@ -21,7 +25,7 @@ public class Futbolista {
 
 	public Futbolista(String nombre, int dorsal, Demarcacion demarcacion, Equipo equipo) {
 		this.dorsal = dorsal;
-		Nombre = nombre;
+		this.Nombre = nombre;
 		this.demarcacion = demarcacion;
 		this.equipo = equipo;
 	}
