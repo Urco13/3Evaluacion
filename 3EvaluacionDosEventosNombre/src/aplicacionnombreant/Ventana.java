@@ -33,7 +33,7 @@ public class Ventana extends JFrame  {
     }
     
     public void iniciarComponentes(){
-        
+        //
 //        getContentPane().setLayout(new FlowLayout());
         
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -48,17 +48,18 @@ public class Ventana extends JFrame  {
         txtnombre.setEditable(true);
         txtnumero.setEditable(false);
         
+        //creamos una zona
         panel1 = new JPanel();
         
         lblmensaje=new JLabel();
         
         //Se crean los eventos que se pueden producir
         ActionListener a1 = new ActionListener(){
-            
+            //esto es lo que va a hace el evento
             @Override
             public void actionPerformed(ActionEvent evento){
                
-                
+   
                Object obj = evento.getSource();
               
                if (obj == txtnombre){
@@ -88,16 +89,20 @@ public class Ventana extends JFrame  {
         txtnombre.addActionListener(a1);
         txtnombre.addKeyListener(k);
         
+        
+        //
         panel1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        //distribuidores de la ventana layout
         panel1.setLayout(new GridLayout(3,3));
+        panel1.setBackground(Color.YELLOW);
         panel1.add(lblnombre);
         panel1.add(txtnombre);
         panel1.add(lblnumero);
         panel1.add(txtnumero);
         panel1.add(lblmensaje);
 //        panel1.add(boton);
-        getContentPane().add(panel1, BorderLayout.CENTER);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        getContentPane().add(panel1, BorderLayout.CENTER);//colocamos el panel en la ventana
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();//tamaño de la ventana
         this.setBounds((screenSize.width-500)/2,(screenSize.height-700)/2, 300, 200);
         
     }
