@@ -5,6 +5,8 @@
  */
 package pkg3evaluacionpersonashashmap;
 
+import java.util.Objects;
+
 /**
  *
  * @author dam115
@@ -38,6 +40,25 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", tlf=" + tlf + ", dni=" + dni + '}';
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Persona other = (Persona) obj;
+        if (!Objects.equals(this.dni, other.dni)) {
+            return false;
+        }
+        return true;
     }
     
 }

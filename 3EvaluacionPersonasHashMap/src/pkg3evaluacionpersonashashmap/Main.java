@@ -23,7 +23,12 @@ public class Main {
         lista.añadir(new Persona("pepe", "88888888", "444"));
         lista.añadir(new Persona("Dori", "88888888", "111"));
         lista.listarPersonas1();
-        
+        System.out.println(lista.buscarPorClave("222").toString());//si ponemos un dni que no se encuentre
+        //da error porque tendriamos que controlar la excepcion
+        Object miArray[]=lista.listaclaves();
+        for (Object object : miArray) {
+            System.out.println(object.toString());
+        }
     }
     
 }
