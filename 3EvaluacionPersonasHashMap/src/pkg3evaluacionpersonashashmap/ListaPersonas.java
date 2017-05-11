@@ -7,7 +7,9 @@ package pkg3evaluacionpersonashashmap;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
@@ -69,6 +71,19 @@ public class ListaPersonas {
   
   public void modificar(){
       
+  }
+  
+  public void listarOtraForma(){
+      System.out.println("Listar otra forma");
+      TreeMap orden = new TreeMap(lista);
+      
+      Collection valores=orden.values();
+      
+      Iterator it=valores.iterator();
+      while (it.hasNext()) {
+          Persona objeto =(Persona)it.next();
+          System.out.println(objeto.toString());
+      }
   }
 //  public void modificar(String nombre,String telf, String dni){
 //      lista.remove(dni);
